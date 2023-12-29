@@ -1,3 +1,9 @@
+import "bootstrap-icons/font/bootstrap-icons.css"
+import Hero from "./Component/Hero/Hero"
+import Header from "./Component/Navbar/Header"
+import Sobremi from "./Component/Sobremi/Sobremi"
+
+
 
 
 const  App = ()=> {
@@ -5,9 +11,12 @@ const  App = ()=> {
 
   return (
     <>
-      <div className="flex justify-center m-10 text-3xl font-bold">Hola mundo </div>
+      <Header />
+      <Hero/>
+      <Sobremi/>
     </>
   )
 }
 
 export default App
+
