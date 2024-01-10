@@ -5,12 +5,13 @@ import { useEffect, useState } from "react";
 
 
 
+
 const Header = () => {
   const [scrolling, setScrolling] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
+      if (window.scrollY > 1) {
         setScrolling(true);
       } else {
         setScrolling(false);
@@ -27,7 +28,7 @@ const Header = () => {
 
   
   return (
-    <header className={` ${scrolling ? 'pt-2 pb-2 backdrop-blur-sm  ' : ''} fixed w-full px-16 flex justify-between justify-center items-center pb-5 pt-5 border-b border-gray-600 transition-all duration-300 `}>
+    <header className={` ${scrolling ? 'pb-1 pt-1 backdrop-blur-sm z-50' : 'pb-5 pt-5'} fixed w-full px-16 flex justify-between justify-center items-center  border-b border-gray-600 transition-all duration-300 animate-fade-down`}>
         <div className="flex gap-5 justify-center items-center">
           <img className="w-20" src={Logo2} alt="logo" />
          <i className="bi bi-instagram cursor-pointer hover:text-gray-700 "></i>
@@ -35,6 +36,7 @@ const Header = () => {
          <i className="bi bi-github cursor-pointer hover:text-gray-700"></i>
         </div>
         <div><Navbar/></div>
+        
     </header>
   )
 }
