@@ -3,7 +3,7 @@ import fondo from "../../assets/perfilimg.jpg"
 
 const Sobremi = () => {
   return (
-    <div id="sobremi" className="h-screen relative bg-scroll">
+    <div id="sobremi" className="h-screen relative">
       
     <video autoPlay loop muted preload src={video} className="absolute"></video>
     
