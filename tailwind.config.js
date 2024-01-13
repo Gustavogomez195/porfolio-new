@@ -8,8 +8,11 @@ export default {
     fontFamily: {
       'stali': [ 'Stalinist One', "sans-serif"],
       'volta': [ 'Voltaire', "sans-serif"],
+      'oswald': [ 'Oswald', "sans-serif", 'Voltaire', "sans-serif"],
     },
-    extend: {},
+    extend: {
+      
+    },
   },
   plugins: [require('tailwindcss-animated')],
 }
