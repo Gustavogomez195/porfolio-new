@@ -3,6 +3,16 @@ import pelota from "../../assets/pelotasticker.png"
 import copa from "../../assets/copa2.png"
 import mate from "../../assets/mate1.png"
 import bandera from "../../assets/bandera.png"
+import html from "../../assets/html.svg"
+import css from "../../assets/css.svg"
+import javascript from "../../assets/javascript.svg"
+import react from "../../assets/react.svg"
+import tailwind from "../../assets/tailwind.svg"
+import node from "../../assets/node.svg"
+import mongo from "../../assets/mongodb.png"
+import { useEffect, useState } from "react"
+
+
 
 
 
@@ -10,11 +20,28 @@ import bandera from "../../assets/bandera.png"
 
 
 const Sobremi = () => {
+  const [scrolear, setScrolear] = useState  (false)
+
+  useEffect(() => {
+    const hacerScroll = () => {
+      if (window.scrollY > 1000) {
+        setScrolear(true);
+      } else {
+        setScrolear(false);
+      }
+    };
+
+    window.addEventListener('scroll', hacerScroll);
+
+    return () => {
+      window.removeEventListener('scroll', hacerScroll);
+    };
+  }, []);
 
  
 
   return (
-    <div   id="sobremi" className="w-full h-screen bg-stone-900 flex te px-16 gap-20 pt-20  "
+    <div   id="sobremi" className={` ${scrolear ? 'bg-green-950' : 'bg-stone-900'} w-full h-screen  flex te px-16 gap-20 pt-20 transition-all duration-500  `}
    >
       <div className="relative  w-full">
 
@@ -30,8 +57,20 @@ const Sobremi = () => {
 <div className="w-full  mb-10 font-oswald border rounded-lg border-orange-100 px-10 ">
 
     <h1 className=" font-bold tracking-tighter text-[80px]  text-orange-100 left-1/2 uppercase top-7  ">Sobre mi</h1>
-    <p className="  text-orange-100 left-1/2 right-14 top-24  ">Soy Gustavo de Obera Misiones Argentina, desarrollador frontend con habilidades sólidas en la creación de interfaces interactivas y atractivas</p>
+    <p className="  text-orange-100 left-1/2 right-14 top-24  ">Soy Gustavo de Obera Misiones Argentina, desarrollador frontend trainee con habilidades sólidas en la creación de interfaces interactivas y atractivas, estoy en constante aprendizaje </p>
     <h5 className=" font-bold  text-[80px] text-orange-100 left-1/2 uppercase top-40">Skill</h5>
+    <div className="flex gap-5">
+
+    <img  src={html} alt="html" />
+    <img  src={css} alt="html" />
+    <img  src={javascript} alt="html" />
+    <img  src={react} alt="html" />
+    <img  src={tailwind} alt="html" />
+    <img  src={node} alt="html" />
+    <img className="w-10" src={mongo} alt="html" />
+
+    
+    </div>
 </div>
     </div>
     

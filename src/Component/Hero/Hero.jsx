@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { motion, useAnimation } from "framer-motion";
+import logog from "../../assets/logog.png"
 
 
 
@@ -15,7 +16,6 @@ const Hero = () => {
       transition: {
         duration: 10,
         ease: "linear",
-        loop: Infinity,
         repeat: Infinity
       },
     });
@@ -23,28 +23,12 @@ const Hero = () => {
 
   
 
-  const [scrolear, setScrolear] = useState  (false)
-
-  useEffect(() => {
-    const hacerScroll = () => {
-      if (window.scrollY > 450) {
-        setScrolear(true);
-      } else {
-        setScrolear(false);
-      }
-    };
-
-    window.addEventListener('scroll', hacerScroll);
-
-    return () => {
-      window.removeEventListener('scroll', hacerScroll);
-    };
-  }, []);
+  
 
 
   
   return (
-    <div id="inicio" className={` ${scrolear ? '' : ''} bg-stone-900 h-screen flex justify-center items-center transition-all duration-500 `} >
+    <div id="inicio" className="bg-stone-900 h-screen flex justify-center items-center " >
 <div className= 'font-oswald font-bold tracking-tighter  text-orange-100 text-center text-[110px] uppercase animate-fade-down'>
      
     
@@ -55,8 +39,8 @@ const Hero = () => {
 
       <h4 >Desarrollador web</h4>
     </div>
-     <motion.div className="absolute bottom-10 left-20 flex items-center justify-center w-20 h-20 rounded-full border-2 border-solid text-orange-100" animate={controls}>
-      hola  
+     <motion.div className="absolute bottom-8 left-10 flex items-center justify-center text-orange-100" animate={controls}>
+      <img className="w-40 h-40 animate-fade-down" src={logog} alt="logo" />
 
      </motion.div>
      

@@ -4,6 +4,7 @@ import Header from "./Component/Navbar/Header"
 import Sobremi from "./Component/Sobremi/Sobremi"
 import Proyectos from "./Component/Proyectos/Proyectos"
 import Contactos from "./Component/Contactos/Contactos"
+import Footer from "./Component/Footer/Footer"
 
 
 
@@ -18,6 +19,7 @@ const  App = ()=> {
       <Sobremi/>
       <Proyectos/>
       <Contactos/>
+      <Footer/>
     </>
   )
 }
