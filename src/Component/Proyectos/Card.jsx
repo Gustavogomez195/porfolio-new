@@ -19,7 +19,7 @@ const Card = ({ titles, subtitles, images }) => {
           </a>
         </div>
         <div className="absolute flex flex-col inset-0 text-orange-100 items-center justify-center gap-3 px-6  translate-y-[70%] group-hover:translate-y-12 transition-all duration-500  ">
-          <h5 className="font-oswald font-bold text-5xl uppercase tracking-tighter">{titles}</h5>
+          <h5 className="font-oswald font-bold text-3xl lg:text-5xl uppercase tracking-tighter">{titles}</h5>
           <p className="font-oswald font-bold text-sm uppercase tracking-tighter ">{subtitles}</p>
         </div>
       </div>

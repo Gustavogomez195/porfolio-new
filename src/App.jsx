@@ -9,6 +9,7 @@ import Footer from "./Component/Footer/Footer"
 
 
 
+
 const  App = ()=> {
   
 
@@ -20,6 +21,7 @@ const  App = ()=> {
       <Proyectos/>
       <Contactos/>
       <Footer/>
+      
     </>
   )
 }

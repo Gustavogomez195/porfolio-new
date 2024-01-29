@@ -28,14 +28,14 @@ const Header = () => {
 
   
   return (
-    <header className={` ${scrolling ? 'pb-1 pt-1 backdrop-blur-sm z-50' : 'pb-5 pt-5'} z-50 fixed w-full px-16 flex justify-between justify-center items-center  border-b border-orange-100 transition-all duration-300 animate-fade-down`}>
+    <header className={` ${scrolling ? 'pb-1 pt-1 backdrop-blur-sm z-50 border-b border-orange-100' : 'pb-5 pt-5 '} z-50 fixed w-full px-16 flex justify-between justify-center items-center  transition-all duration-300 animate-fade-down`}>
         <div className="flex gap-5 justify-center items-center">
-          <img className="w-20" src={Logo1} alt="logo" />
-         <i className="bi bi-instagram cursor-pointer text-orange-100 hover:text-orange-50 "></i>
-         <i className="bi bi-linkedin cursor-pointer text-orange-100  hover:text-orange-50"></i>
-         <i className="bi bi-github cursor-pointer text-orange-100  hover:text-orange-50"></i>
+          <a href="#inicio"><img  className="w-20" src={Logo1} alt="logo" /></a>
+         <a target="_blank" href="https://www.instagram.com/gustavogomezzz_/" ><i className="bi bi-instagram cursor-pointer text-orange-100 hover:text-orange-50 "></i></a>
+         <a target="_blank" href="https://www.linkedin.com/in/gustavo-gomez-971b761b0/"><i className="bi bi-linkedin cursor-pointer text-orange-100  hover:text-orange-50"></i></a>
+         <a target="_blank" href="https://github.com/Gustavogomez195"><i className="bi bi-github cursor-pointer text-orange-100  hover:text-orange-50"></i></a>
         </div>
-        <div><Navbar/></div>
+        <div className="hidden lg:flex"><Navbar/></div>
         
     </header>
   )
