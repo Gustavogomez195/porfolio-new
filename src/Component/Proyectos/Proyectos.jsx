@@ -1,5 +1,6 @@
 
 import Silla from "../../assets/silla.jpg"
+import ecommerce from "../../assets/ecommerce.png"
 import { Card } from "./Card";
 import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
@@ -25,20 +26,20 @@ const Proyectos = () => {
   const cards = [
     {
       id: 1,
-      title: "Proyecto-1",
-      subtitle: "Informacion sobre el proyecto que lo voy a escribir aca cuando sepa cual subir",
-      image: Silla,
+      title: "Ecommerce",
+      subtitle: "Desarrollé un ecommerce dedicado a la venta de muebles en colaboración con un equipo, utilizando MongoDB como base de datos. Utilizamos Express.js como framework de backend para la gestión de rutas y controladores, React.js para la interfaz de usuario dinámica y responsive, y Node.js para el entorno de ejecución del servidor.",
+      image: ecommerce,
     },
     {
       id: 2,
       title: "Proyecto-2",
-      subtitle: "Informacion sobre el proyecto que lo voy a escribir aca cuando sepa cual subir",
+      subtitle: "Informacion sobre el proyecto",
       image: Silla,
     },
     {
       id: 3,
       title: "Proyecto-3",
-      subtitle: "Informacion sobre el proyecto que lo voy a escribir aca cuando sepa cual subir"  ,
+      subtitle: "Informacion sobre el proyecto"  ,
       image: Silla,
     },
    
@@ -56,11 +57,11 @@ const Proyectos = () => {
       }}
       transition={{ duration: 0.5 }}>
 
-      <h5 className=' text-red-300 font-oswald font-bold tracking-tighter text-4xl lg:text-[100px] uppercase leading-none '>proyectos  <span className="pl-16 lg:pl-24   ">seleccionados  </span></h5>
+      <h5 className=' text-red-300 font-oswald font-bold tracking-tighter text-4xl md:text-[80px] lg:text-[100px] uppercase leading-none '>proyectos  <span className="pl-16 lg:pl-24   ">seleccionados  </span></h5>
       
   
       
-      <div className="flex flex-col lg:grid lg:grid-cols-3 gap-5 pt-20  ">
+      <div className="flex flex-col md:grid md:grid-cols-2 lg:grid lg:grid-cols-3  gap-5 pt-20  ">
         {cards.map((card) => (
           <div key={card.id}>
             <Card

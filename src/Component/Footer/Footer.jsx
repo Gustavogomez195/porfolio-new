@@ -9,7 +9,7 @@ const Footer = () => {
         animate={{ x: '-100%' }}
         transition={{ repeat: Infinity, duration: 10, ease: 'linear' }}>
 
-<p className='text-red-300 font-oswald font-bold tracking-tighter text-4xl lg:text-[100px] uppercase opacity-30  '>!Contactate conmigo¡</p>
+<p className='text-red-300 font-oswald font-bold tracking-tighter text-4xl md:text-[80px]  lg:text-[100px] uppercase opacity-30  '>!Contactate conmigo¡</p>
      
 
      </motion.div>

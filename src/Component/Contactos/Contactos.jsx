@@ -38,7 +38,7 @@ const Contactos = () => {
   
 
   return (
-    <div id='contactos' className=' w-full h-screen bg-stone-900 px-10 lg:px-16 pt-10 lg:pt-16  overflow-hidden '>
+    <div id='contactos' className=' w-full lg:h-screen bg-stone-900 px-10 lg:px-16 pt-10 lg:pt-16  overflow-hidden '>
       
       <motion.h5  ref={ref}
       initial="hidden"
@@ -47,7 +47,7 @@ const Contactos = () => {
         visible: { opacity: 1, y: 0 },
         hidden: { opacity: 0, y: 50 },
       }}
-      transition={{ duration: 0.5 }} className='text-red-300 font-oswald font-bold tracking-tighter text-4xl  lg:text-[100px] uppercase pt-10 '>Contactos</motion.h5>
+      transition={{ duration: 0.5 }} className='text-red-300 font-oswald font-bold tracking-tighter text-4xl md:text-[80px] lg:text-[100px] uppercase pt-20 '>Contactos</motion.h5>
 <div className='flex flex-col lg:grid lg:grid-cols-2 pt-16'>
 
     

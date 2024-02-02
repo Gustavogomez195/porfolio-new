@@ -43,8 +43,8 @@ const Hero = () => {
 
   
   return (
-    <div id="inicio" className="w-full  bg-green-950 h-screen flex justify-center  items-center px-16 " >
-<div className= 'font-oswald font-semibold leading-tight tracking-tighter  text-orange-100 text-left text-5xl lg:text-[120px]  uppercase animate-fade-down'>
+    <div id="inicio" className="w-full  bg-green-950 h-screen flex justify-center  items-center px-10 lg:px-16 " >
+<div className= 'font-oswald font-semibold leading-tight tracking-tighter  text-orange-100 text-left text-5xl md:text-8xl lg:text-[120px]  uppercase animate-fade-down'>
      
     
 
@@ -55,7 +55,7 @@ const Hero = () => {
 
       <h2   >Desarrollador web</h2>
     </div>
-     <motion.div className="hidden lg:flex absolute  items-center  top-[160px] right-[190px]" animate={controls}>
+     <motion.div className="hidden lg:flex absolute  items-center  top-[170px] right-[190px]" animate={controls}>
       <img className="w-44 h-44  animate-fade-down" src={logog} alt="logo" />
 
      </motion.div>
