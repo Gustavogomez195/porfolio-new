@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -8,6 +8,7 @@ import { useInView } from 'react-intersection-observer';
 const Contactos = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
+  const [notification, setNotification] = useState('');
 
   useEffect(() => {
     if (inView) {
@@ -16,6 +17,14 @@ const Contactos = () => {
       controls.start('hidden');
     }
   }, [controls, inView]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setNotification('');
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, [notification]);
 
 
 
@@ -27,8 +36,10 @@ const Contactos = () => {
     emailjs.sendForm('service_91jowea', 'template_fx4t49d', form.current, '-mxGT6qdnqIYAfbPS')
       .then((result) => {
           console.log(result.text);
+          setNotification('El mensaje fue enviado con éxito.');
       }, (error) => {
           console.log(error.text);
+          setNotification('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.');
       });
   };
 
@@ -64,26 +75,27 @@ const Contactos = () => {
 
     </div>
 
-    <div className='w-full  mb-20 font-oswald border rounded-lg border-orange-100 p-5  '>
+    <div className='relative w-full  mb-20 font-oswald border rounded-lg border-orange-100 p-5  '>
+    {notification && <div className='absolute  bottom-0 right-0 mb-4 mr-4 bg-green-950 text-orange-100 py-2 px-4 rounded-lg shadow'>{notification}</div>}
 
     <form ref={form} onSubmit={sendEmail}>
 
         <div className='font-oswald text-orange-100 flex flex-col mb-5' >
 
          <label>Nombre</label>
-          <input className='border border-orange-100 rounded bg-transparent'  type="text" name="user_name" required />
+          <input className='border border-orange-100 rounded bg-transparent focus:outline-none'  autoComplete='off' type="text" name="user_name" required />
         </div>
 
         <div className='font-oswald text-orange-100 flex flex-col mb-5'>
 
       <label>Email</label>
-      <input className='border border-orange-100 rounded bg-transparent'  type="email" name="user_email" required />
+      <input className='border border-orange-100 rounded bg-transparent focus:outline-none' autoComplete='off' type="email" name="user_email" required />
         </div>
 
         <div className='font-oswald text-orange-100 flex flex-col mb-5 '>
 
       <label>Mensaje</label>
-      <textarea className='border border-orange-100 rounded bg-transparent'  name="message"/>
+      <textarea className='border border-orange-100 rounded bg-transparent focus:outline-none'  name="message"/>
         </div>
       <input className='font-oswald text-red-300 text-xl border border-orange-100 rounded p-2 cursor-pointer' type="submit" value="Enviar"  />
     </form>
