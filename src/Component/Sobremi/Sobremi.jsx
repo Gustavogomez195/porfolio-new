@@ -36,28 +36,12 @@ const Sobremi = () => {
   }, [controls, inView]);
 
   
-  const [scrolear, setScrolear] = useState  (false)
-
-  useEffect(() => {
-    const hacerScroll = () => {
-      if (window.scrollY > 1000) {
-        setScrolear(true);
-      } else {
-        setScrolear(false);
-      }
-    };
-
-    window.addEventListener('scroll', hacerScroll);
-
-    return () => {
-      window.removeEventListener('scroll', hacerScroll);
-    };
-  }, []);
+  
 
  
 
   return (
-    <div   id="sobremi" className={` ${scrolear ? 'bg-stone-900' : ' bg-green-950 '} w-full   lg:h-screen  flex flex-col md:flex-row lg:flex-row px-10 lg:px-16 gap-20 pt-5 lg:pt-20 pb-20 transition-all duration-500  `}
+    <div   id="sobremi" className=" bg-gradient-to-t from-gray-950 to-[#050b1f] w-full   lg:h-screen  flex flex-col md:flex-row lg:flex-row px-10 lg:px-36 gap-20 pt-5 lg:pt-20 pb-20 transition-all duration-500  "
    >
       <motion.div className="relative flex items-end items-center  justify-center w-full " 
        ref={ref}
@@ -78,7 +62,7 @@ const Sobremi = () => {
 
       
     
-<motion.div className="w-full  font-oswald border rounded-lg border-orange-100 px-10 "
+<motion.div className="w-full  font-oswald border rounded-lg border-orange-50 px-10  "
  ref={ref}
  initial="hidden"
  animate={controls}
@@ -88,9 +72,9 @@ const Sobremi = () => {
  }}
  transition={{ duration: 0.5 }}>
 
-    <h1 className=" font-bold tracking-tighter text-[40px] md:text-[60px] lg:text-[80px]  text-red-300 left-1/2 uppercase top-7  ">Sobre mi</h1>
-    <p className="  text-orange-100 left-1/2 right-14 top-24  ">Soy Gustavo de Obera Misiones Argentina, desarrollador frontend trainee con habilidades sólidas en la creación de interfaces interactivas y atractivas, estoy en constante aprendizaje </p>
-    <h5 className=" font-bold text-[40px] md:text-[60px] lg:text-[80px] text-orange-100 left-1/2 uppercase top-40">Skill</h5>
+    <h1 className=" font-bold tracking-tighter text-[40px] md:text-[60px] lg:text-[80px]  text-[#ca92d4] left-1/2 uppercase top-7  ">Sobre mi</h1>
+    <p className="  text-orange-50 left-1/2 right-14 top-24  ">Soy Gustavo de Obera Misiones Argentina, desarrollador frontend trainee con habilidades sólidas en la creación de interfaces interactivas y atractivas, estoy en constante aprendizaje </p>
+    <h5 className=" font-bold text-[40px] md:text-[60px] lg:text-[80px] text-orange-50 left-1/2 uppercase top-40">Skill</h5>
     
     <div className="flex flex-wrap gap-5 pb-5  ">
 

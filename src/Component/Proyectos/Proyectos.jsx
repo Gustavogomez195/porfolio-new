@@ -45,7 +45,7 @@ const Proyectos = () => {
    
   ];
   return (
-    <section  id='proyectos' className=" w-full lg:h-screen  bg-stone-900 px-10 lg:px-16 pt-10 lg:pt-16 pb-20"
+    <section  id='proyectos' className=" w-full lg:h-screen  bg-gray-950 px-10 lg:px-36 pt-10 lg:pt-16 pb-20"
     >
       
 <motion.div   ref={ref}
@@ -57,11 +57,11 @@ const Proyectos = () => {
       }}
       transition={{ duration: 0.5 }}>
 
-      <h5 className=' text-red-300 font-oswald font-bold tracking-tighter text-4xl md:text-[80px] lg:text-[100px] uppercase leading-none '>proyectos  <span className="pl-16 lg:pl-24   ">seleccionados  </span></h5>
+      <h5 className=' text-[#ca92d4] font-oswald font-bold tracking-tighter text-4xl lg:text-[80px] uppercase leading-none px-2 '>proyectos  <span className="pl-16 lg:pl-36   ">seleccionados  </span></h5>
       
   
       
-      <div className="flex flex-col md:grid md:grid-cols-2 lg:grid lg:grid-cols-3  gap-5 pt-20  ">
+      <div className="flex flex-col md:grid md:grid-cols-2 lg:grid lg:grid-cols-3  gap-5 pt-20 px-3 ">
         {cards.map((card) => (
           <div key={card.id}>
             <Card

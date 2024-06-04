@@ -43,13 +43,13 @@ const Hero = () => {
 
   
   return (
-    <div id="inicio" className="w-full  bg-green-950 h-screen flex justify-center  items-center px-10 lg:px-16 " >
-<div className= 'font-oswald font-semibold leading-tight tracking-tighter  text-orange-100 text-left text-5xl md:text-8xl lg:text-[120px]  uppercase animate-fade-down'>
+    <div id="inicio" className="w-full bg-gradient-to-b from-[#0a1539] via-[#060d25] to-[#050b1f]   h-screen flex justify-center  items-center px-10 lg:px-36 " >
+<div className= 'font-oswald font-semibold leading-tight tracking-tighter  text-orange-50 text-left text-5xl md:text-8xl lg:text-[120px]  uppercase animate-fade-down'>
      
     
 
       
-      <h1 className=" text-red-300 ">
+      <h1 className=" text-[#ca92d4] ">
       Gustavo Gomez 
       </h1>
 
@@ -59,12 +59,12 @@ const Hero = () => {
       <img className="w-44 h-44  animate-fade-down" src={logog} alt="logo" />
 
      </motion.div>
-     <i className="absolute bottom-10 bi bi-arrow-down-circle-fill text-orange-100 text-3xl animate-bounce animate-infinite"></i>
+     <i className="absolute bottom-10 bi bi-arrow-down-circle-fill text-orange-50 text-3xl animate-bounce animate-infinite"></i>
 
-     <div className="fixed  font-oswald bottom-10 left-[60px] px-0 text-[11px] lg:text-[15px] text-orange-100 z-50 uppercase">
+     <div className="fixed  font-oswald bottom-10 left-[60px] px-0 text-[11px] lg:left-[154px] lg:text-[15px] text-orange-50 z-50 uppercase">
      <p>© 2024 Gustavo Gomez</p>
      </div>
-     <p className="fixed  font-oswald bottom-10 right-[60px] text-[11px] lg:text-[15px] text-orange-100 z-50 uppercase ">tiempo {segundos}</p>
+     <p className="fixed  font-oswald bottom-10 right-[60px] text-[11px] right-[150px] lg:text-[15px] text-orange-50 z-50 uppercase ">tiempo {segundos}</p>
 </div>
     
     
