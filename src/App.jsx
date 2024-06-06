@@ -6,7 +6,8 @@ import Contactos from "./Component/Contactos/Contactos"
 import Footer from "./Component/Footer/Footer"
 import ProjectList from "./Component/Proyectos/Proyectos"
 import { useState } from "react"
-import WelcomeScreen from "./Component/carga/carga"
+import WelcomeScreen from "./Component/Carga/Carga"
+
 
 
 
