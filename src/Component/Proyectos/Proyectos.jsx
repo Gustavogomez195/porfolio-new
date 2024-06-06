@@ -1,20 +1,16 @@
-
-import Silla from "../../assets/silla.jpg"
-import ecommerce from "../../assets/ecommerce.png"
-import { Card } from "./Card";
-import React, { useEffect } from 'react';
+import Ecommerce  from "../../assets/ecommerce.png"
 import { motion, useAnimation } from 'framer-motion';
+import { useEffect } from "react";
 import { useInView } from 'react-intersection-observer';
 
-
-
-
-const Proyectos = () => {
-
-
-
+const ProjectList = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
+  const projectList = [
+    { title: 'Ecommerce', image: Ecommerce },
+    { title: 'Proyecto 2', image: Ecommerce },
+    { title: 'Proyecto 3', image: Ecommerce },
+  ];
 
   useEffect(() => {
     if (inView) {
@@ -23,58 +19,37 @@ const Proyectos = () => {
       controls.start('hidden');
     }
   }, [controls, inView]);
-  const cards = [
-    {
-      id: 1,
-      title: "Ecommerce",
-      subtitle: "Desarrollé un ecommerce dedicado a la venta de muebles en colaboración con un equipo, utilizando MongoDB como base de datos. Utilizamos Express.js como framework de backend para la gestión de rutas y controladores, React.js para la interfaz de usuario dinámica y responsive, y Node.js para el entorno de ejecución del servidor.",
-      image: ecommerce,
-    },
-    {
-      id: 2,
-      title: "Proyecto-2",
-      subtitle: "Informacion sobre el proyecto",
-      image: Silla,
-    },
-    {
-      id: 3,
-      title: "Proyecto-3",
-      subtitle: "Informacion sobre el proyecto"  ,
-      image: Silla,
-    },
-   
-  ];
-  return (
-    <section  id='proyectos' className=" w-full lg:h-screen  bg-gray-950 px-10 lg:px-36 pt-10 lg:pt-16 pb-20"
-    >
-      
-<motion.div   ref={ref}
-      initial="hidden"
-      animate={controls}
-      variants={{
-        visible: { opacity: 1, y: 0 },
-        hidden: { opacity: 0, y: 50 },
-      }}
-      transition={{ duration: 0.5 }}>
 
-      <h5 className=' text-[#ca92d4] font-oswald font-bold tracking-tighter text-4xl lg:text-[80px] uppercase leading-none px-2 '>proyectos  <span className="pl-16 lg:pl-36   ">seleccionados  </span></h5>
-      
+
   
-      
-      <div className="flex flex-col md:grid md:grid-cols-2 lg:grid lg:grid-cols-3  gap-5 pt-20 px-3 ">
-        {cards.map((card) => (
-          <div key={card.id}>
-            <Card
-              titles={card.title}
-              subtitles={card.subtitle}
-              images={card.image}
+    return (
+      <motion.div id="proyectos"  className=" pt-20 pb-48 w-full h-screen  flex flex-col items-center tracking-wider "
+      ref={ref}
+    initial="hidden"
+    animate={controls}
+    variants={{
+      visible: { opacity: 1, y: 0 },
+      hidden: { opacity: 0, y: 100 },
+    }}
+    transition={{ duration: 0.5 }}>
+        
+            <h4  className=" text-slate-50 font-oswald tracking-wider text-5xl w-full px-20 m-20">Proyectos</h4>
+        
+        {projectList.map((project, index) => (
+          <div key={index} className="w-[87%]   flex items-center relative overflow-hidden  border-t  border-slate-50 border-opacity-40 hover:border-opacity-60 pb-24 pt-24   group">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="rounded absolute top-6 left-0 transform -translate-x-full w-30 h-36 object-cover transition-transform duration-500 ease-in-out group-hover:translate-x-10"
             />
+            <h2 className="text-5xl text-slate-50   font-oswald transition-all duration-500 ease-in-out pl-10 opacity-20 group-hover:opacity-100 group-hover:ml-48">
+              {project.title}
+            </h2>
+            <i className="bi bi-arrow-up-right text-4xl text-slate-50 opacity-10  absolute left-[90%] duration-300 group-hover:opacity-100 "></i>
           </div>
         ))}
-      </div>
-</motion.div>
-    </section>
-  );
-};
-
-export default Proyectos
+      </motion.div>
+    );
+  };
+  
+  export default ProjectList;

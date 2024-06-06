@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { motion, useAnimation } from "framer-motion";
-import logog from "../../assets/logog.png"
+import logotipo from "../../assets/logotipo.png"
+
 
 
 
@@ -43,28 +44,38 @@ const Hero = () => {
 
   
   return (
-    <div id="inicio" className="w-full bg-gradient-to-b from-[#0a1539] via-[#060d25] to-[#050b1f]   h-screen flex justify-center  items-center px-10 lg:px-36 " >
-<div className= 'font-oswald font-semibold leading-tight tracking-tighter  text-orange-50 text-left text-5xl md:text-8xl lg:text-[120px]  uppercase animate-fade-down'>
-     
-    
-
+    <div id="inicio" className="relative overflow-hidden h-screen flex items-center   " >
       
-      <h1 className=" text-[#ca92d4] ">
-      Gustavo Gomez 
-      </h1>
+    <motion.div  
+        initial={{ x: '0' }}
+        animate={{ x: '-50%' }}
+        transition={{ repeat: Infinity, duration: 25, ease: 'linear' }}
+        className="flex whitespace-nowrap">
 
-      <h2   >Desarrollador web</h2>
-    </div>
-     <motion.div className="hidden lg:flex absolute  items-center  top-[170px] right-[190px]" animate={controls}>
-      <img className="w-44 h-44  animate-fade-down" src={logog} alt="logo" />
+<p className='  text-slate-50 font-oswald tracking-wider text-4xl md:text-[80px]  lg:text-9xl    '> - Gustavo Gomez - Web Developer - </p>
+<p className='text-slate-50 font-oswald tracking-wider text-4xl md:text-[80px] lg:text-9xl '> Gustavo Gomez - Web Developer -
+        </p>
+     </motion.div>
+     
+     <motion.div className=" hidden lg:flex absolute  items-center  top-[95px] right-[60px]" animate={controls}>
+      <img className="w-28 h-28  animate-fade-down" src={logotipo} alt="logo" />
 
      </motion.div>
-     <i className="absolute bottom-10 bi bi-arrow-down-circle-fill text-orange-50 text-3xl animate-bounce animate-infinite"></i>
+     
 
-     <div className="fixed  font-oswald bottom-10 left-[60px] px-0 text-[11px] lg:left-[154px] lg:text-[15px] text-orange-50 z-50 uppercase">
+    
+    
+
+     <i class="bi bi-arrow-down-right text-white text-4xl absolute left-[50%] bottom-10"></i>
+     
+     
+     <div className="fixed font-oswald bottom-10 left-[60px] px-0 text-[11px] lg:left-[80px] lg:text-[15px] text-slate-50 z-50 uppercase">
      <p>© 2024 Gustavo Gomez</p>
+     
      </div>
-     <p className="fixed  font-oswald bottom-10 right-[60px] text-[11px] right-[150px] lg:text-[15px] text-orange-50 z-50 uppercase ">tiempo {segundos}</p>
+    
+     <p className="fixed  font-oswald bottom-10 right-[60px] text-[11px] lg:right-[75px] lg:text-[15px] text-slate-50 z-50 uppercase ">tiempo {segundos}</p>
+     
 </div>
     
     

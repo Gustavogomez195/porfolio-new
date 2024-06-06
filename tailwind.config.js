@@ -4,12 +4,16 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  
   theme: {
     fontFamily: {
       'stali': [ 'Stalinist One', "sans-serif"],
       'volta': [ 'Voltaire', "sans-serif"],
       'oswald': [ 'Oswald', "sans-serif", 'Voltaire', "sans-serif"],
+      'dot':["DotGothic16", "sans-serif"],
+      'zen':["Zen Dots", "sans-serif"]
     },
+    
     extend: {
       
     },
