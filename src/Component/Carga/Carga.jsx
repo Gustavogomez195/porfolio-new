@@ -1,4 +1,4 @@
-// src/components/WelcomeScreen.jsx
+
 import { motion, AnimatePresence } from 'framer-motion';
 import React, { useState, useEffect } from 'react';
 
@@ -8,7 +8,7 @@ const WelcomeScreen = ({ onComplete }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setStartAnimation(true);
-    }, 1000); // Mantener visible por 2 segundos antes de empezar la animación
+    }, 1000); 
 
     return () => clearTimeout(timer);
   }, []);

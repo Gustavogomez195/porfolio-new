@@ -7,6 +7,8 @@ import Footer from "./Component/Footer/Footer"
 import ProjectList from "./Component/Proyectos/Proyectos"
 import { useState } from "react"
 import WelcomeScreen from "./Component/Carga/Carga"
+import CursorLinterna from "./Component/Cursor/CursorLinterna"
+
 
 
 
@@ -30,10 +32,10 @@ const  App = ()=> {
     
   return (
     <>
-    <div >
+    <div className="relative" >
     {showWelcome && <WelcomeScreen onComplete={handleWelcomeComplete} />}
     <div className={`transition-opacity duration-1000 ${showWelcome ? 'opacity-0' : 'opacity-100'}`}>
-      
+      <CursorLinterna/>
       <Header/>
       
       <Hero/>

@@ -6,7 +6,7 @@ import javascript from "../../assets/javascript.svg"
 import react from "../../assets/react.svg"
 import tailwind from "../../assets/tailwind.svg"
 import node from "../../assets/node.svg"
-import mongo from "../../assets/mongodb.png"
+import mongo from "../../assets/mongo.png"
 import { useEffect} from "react"
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -74,16 +74,41 @@ const Sobremi = () => {
     <p className="  text-slate-50 left-1/2 right-14 top-24 font-oswald pb-10  ">Soy Gustavo de Obera Misiones Argentina, desarrollador frontend trainee con habilidades sólidas en la creación de interfaces interactivas y atractivas, estoy en constante aprendizaje </p>
     <h5 className=" font-oswald  text-[40px] md:text-[60px] lg:text-5xl text-slate-50 left-1/2  top-40 pb-10">Skill</h5>
     
-    <div className="flex flex-wrap gap-5 pb-5  ">
+    <div className="flex flex-wrap gap-5  text-slate-50 text-sm font-oswald items-center ">
 
-
+ 
     <img  src={html} alt="html" />
-    <img  src={css} alt="html" />
-    <img  src={javascript} alt="html" />
-    <img  src={react} alt="html" />
-    <img  src={tailwind} alt="html" />
-    <img  src={node} alt="html" />
-    <img className="w-10" src={mongo} alt="html" />
+
+
+
+
+    <img  src={css} alt="css" />
+
+
+
+    <img   src={javascript} alt="javascript" />
+    
+
+
+    
+    <img  src={react} alt="react" />
+    
+
+
+  
+    <img  src={tailwind} alt="tailwind" />
+    
+
+
+
+    <img  src={node} alt="node" />
+
+
+ 
+
+    <img className="w-10  " src={mongo} alt="mongo" />
+
+
 
 
     

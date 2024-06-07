@@ -1,15 +1,19 @@
-import Ecommerce  from "../../assets/ecommerce.png"
+import React, { useState, useEffect } from "react";
+import Ecommerce from "../../assets/ecommerce.png";
 import { motion, useAnimation } from 'framer-motion';
-import { useEffect } from "react";
 import { useInView } from 'react-intersection-observer';
+import ProjectModal from './ProjectModal'; // Asegúrate de crear este componente más adelante
 
 const ProjectList = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView();
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+
   const projectList = [
-    { title: 'Ecommerce', image: Ecommerce },
-    { title: 'Proyecto 2', image: Ecommerce },
-    { title: 'Proyecto 3', image: Ecommerce },
+    { title: 'Ecommerce', image: Ecommerce,git: "https://github.com/LautaroJLZ/BackEndReact" ,link: "https://back-end-react-final-project.vercel.app/", description: "Desarrollé un ecommerce dedicado a la venta de muebles como proyecto final de crusada en colaboración con un equipo, utilizando el stack MERN, MongoDb, Express.js, React.js y Node.js " },
+    { title: 'Proyecto 2', image: Ecommerce, description: "Descripción del Proyecto 2." },
+    { title: 'Proyecto 3', image: Ecommerce, description: "Descripción del Proyecto 3." },
   ];
 
   useEffect(() => {
@@ -20,36 +24,56 @@ const ProjectList = () => {
     }
   }, [controls, inView]);
 
-
-  
-    return (
-      <motion.div id="proyectos"  className=" pt-20 pb-48 w-full h-screen  flex flex-col items-center tracking-wider "
-      ref={ref}
-    initial="hidden"
-    animate={controls}
-    variants={{
-      visible: { opacity: 1, y: 0 },
-      hidden: { opacity: 0, y: 100 },
-    }}
-    transition={{ duration: 0.5 }}>
-        
-            <h4  className=" text-slate-50 font-oswald tracking-wider text-5xl w-full px-20 m-20">Proyectos</h4>
-        
-        {projectList.map((project, index) => (
-          <div key={index} className="w-[87%]   flex items-center relative overflow-hidden  border-t  border-slate-50 border-opacity-40 hover:border-opacity-60 pb-24 pt-24   group">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="rounded absolute top-6 left-0 transform -translate-x-full w-30 h-36 object-cover transition-transform duration-500 ease-in-out group-hover:translate-x-10"
-            />
-            <h2 className="text-5xl text-slate-50   font-oswald transition-all duration-500 ease-in-out pl-10 opacity-20 group-hover:opacity-100 group-hover:ml-48">
-              {project.title}
-            </h2>
-            <i className="bi bi-arrow-up-right text-4xl text-slate-50 opacity-10  absolute left-[90%] duration-300 group-hover:opacity-100 "></i>
-          </div>
-        ))}
-      </motion.div>
-    );
+  const handleOpenModal = (project) => {
+    setSelectedProject(project);
+    setModalOpen(true);
   };
-  
-  export default ProjectList;
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setSelectedProject(null);
+  };
+
+  return (
+    <motion.div
+      id="proyectos"
+      className="pt-20 pb-48 w-full h-screen flex flex-col items-center tracking-wider"
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={{
+        visible: { opacity: 1, y: 0 },
+        hidden: { opacity: 0, y: 100 },
+      }}
+      transition={{ duration: 0.5 }}
+    >
+      <h4 className="text-slate-50 font-oswald tracking-wider text-5xl w-full px-20 m-20">Proyectos</h4>
+
+      {projectList.map((project, index) => (
+        <div key={index} className="w-[87%] flex items-center relative overflow-hidden border-t border-slate-50 border-opacity-40 hover:border-opacity-60 pb-24 pt-24 group">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="rounded absolute top-6 left-0 transform -translate-x-full w-30 h-36 object-cover transition-transform duration-500 ease-in-out group-hover:translate-x-10"
+          />
+          <h2 className="text-5xl text-slate-50 font-oswald transition-all duration-500 ease-in-out pl-10 opacity-20 group-hover:opacity-100 group-hover:ml-48">
+            {project.title}
+          </h2>
+          
+          <button 
+            className="text-2xl text-slate-50 opacity-10 absolute left-[90%] duration-300 group-hover:opacity-100" 
+            onClick={() => handleOpenModal(project)}
+          >
+            Ver más
+          </button>
+        </div>
+      ))}
+
+      {isModalOpen && selectedProject && (
+        <ProjectModal project={selectedProject} onClose={handleCloseModal} />
+      )}
+    </motion.div>
+  );
+};
+
+export default ProjectList;
