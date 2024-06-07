@@ -27,8 +27,8 @@ const ProjectModal = ({ project, onClose }) => {
       >
         <div className='flex justify-between'>
         <h2 className="text-2xl text-slate-50  mb-2">{project.title}</h2>
-          <button className="text-red-500 text-oswald" onClick={onClose}>
-            Cerrar
+          <button className="text-white text-xl" onClick={onClose}>
+          <i class="bi bi-x"></i>
           </button>
 
         </div>
