@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Ecommerce from "../../assets/ecommerce.png";
+import Sinfoto from "../../assets/sinfoto.jpg"
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import ProjectModal from './ProjectModal'; // Asegúrate de crear este componente más adelante
@@ -12,8 +13,8 @@ const ProjectList = () => {
 
   const projectList = [
     { title: 'Ecommerce', image: Ecommerce,git: "https://github.com/LautaroJLZ/BackEndReact" ,link: "https://back-end-react-final-project.vercel.app/", description: "Desarrollé un ecommerce dedicado a la venta de muebles como proyecto final de crusada en colaboración con un equipo, utilizando el stack MERN, MongoDb, Express.js, React.js y Node.js " },
-    { title: 'Proyecto 2', image: Ecommerce, description: "Descripción del Proyecto 2." },
-    { title: 'Proyecto 3', image: Ecommerce, description: "Descripción del Proyecto 3." },
+    { title: 'Proyecto ', image: Sinfoto, description: "Descripción del Proyecto 2." },
+    { title: 'Proyecto ', image: Sinfoto, description: "Descripción del Proyecto 3." },
   ];
 
   useEffect(() => {
@@ -47,21 +48,21 @@ const ProjectList = () => {
       }}
       transition={{ duration: 0.5 }}
     >
-      <h4 className="text-slate-50 font-oswald tracking-wider text-5xl w-full px-20 m-20">Proyectos</h4>
+      <h4 className="text-slate-50 font-oswald tracking-wider text-3xl md:text-4xl lg:text-5xl w-full  px-20  m-20">Proyectos</h4>
 
       {projectList.map((project, index) => (
         <div key={index} className="w-[87%] flex items-center relative overflow-hidden border-t border-slate-50 border-opacity-40 hover:border-opacity-60 pb-24 pt-24 group">
           <img
             src={project.image}
             alt={project.title}
-            className="rounded absolute top-6 left-0 transform -translate-x-full w-30 h-36 object-cover transition-transform duration-500 ease-in-out group-hover:translate-x-10"
+            className="rounded absolute top-6 left-0 transform -translate-x-full w-40 h-36 object-cover transition-transform duration-500 ease-in-out group-hover:translate-x-10"
           />
-          <h2 className="text-5xl text-slate-50 font-oswald transition-all duration-500 ease-in-out pl-10 opacity-20 group-hover:opacity-100 group-hover:ml-48">
+          <h2 className="text-2xl md:text-3xl lg:text-5xl text-slate-50 font-oswald transition-all duration-500 ease-in-out pl-10 opacity-20 group-hover:opacity-100 group-hover:ml-48 group-hover:lg:visible group-hover:md:visible group-hover:invisible">
             {project.title}
           </h2>
           
           <button 
-            className="text-2xl text-slate-50 opacity-10 absolute left-[90%] duration-300 group-hover:opacity-100" 
+            className="text-sm md:text-xl lg:text-2xl text-slate-50 opacity-10 absolute left-[90%] duration-300 group-hover:opacity-100" 
             onClick={() => handleOpenModal(project)}
           >
             Ver más

@@ -60,7 +60,7 @@ const Contactos = () => {
     transition={{ duration: 0.5 }} >
       
       
-      <h5 className=' text-slate-50 font-oswald  text-5xl md:text-[80px] lg:text-[50px]  pt-20 px-2 '>Contactos</h5>
+      <h5 className=' text-slate-50 font-oswald  text-3xl md:text-4xl lg:text-5xl  pt-20 px-2 '>Contactos</h5>
 <div className='flex flex-col lg:grid lg:grid-cols-2 pt-16'>
 
     
@@ -78,8 +78,8 @@ const Contactos = () => {
 
     </div>
 
-    <div className='relative w-full  mb-20 font-oswald  border  border-slate-50 border-opacity-50 p-5  '>
-    {notification && <div className='absolute  bottom-0 right-0 mb-4 mr-4 bg-green-950 text-slate-50 py-2 px-4 rounded-lg shadow'>{notification}</div>}
+    <div className='relative w-full  mb-20 font-oswald rounded border  border-slate-50 border-opacity-50 p-5  '>
+    {notification && <div className='absolute  bottom-0 right-0 mb-4 mr-4 bg-stone-950 text-slate-50 py-2 px-4 border rounded-lg shadow'>{notification}</div>}
 
     <form ref={form} onSubmit={sendEmail}>
 

@@ -30,7 +30,7 @@ const Header = () => {
 
   
   return (
-    <header className={` ${scrolling ? 'pb-1 pt-1 backdrop-blur-sm z-50 border-b border-slate-50 border-opacity-60' : 'pb-5   pt-5  '}  z-50 fixed w-full px-20  flex justify-between justify-center items-center  transition-all duration-300 animate-fade-down `}>
+    <header className={` ${scrolling ? 'pb-1 pt-1 backdrop-blur-sm z-50 border-b border-slate-50 border-opacity-60' : 'pb-5   pt-5  '}  z-50 fixed w-full px-10 lg:px-20  flex justify-between justify-center items-center  transition-all duration-300 animate-fade-down `}>
         <div className="flex gap-5 justify-center items-center">
           <a href="#inicio"><img  className="w-20 " src={Logotipo2} alt="logo" /></a>
          <a target="_blank" href="https://www.instagram.com/gustavogomezzz_/" ><i className="bi bi-instagram cursor-pointer text-slate-50 hover:text-slate-3  00 "></i></a>

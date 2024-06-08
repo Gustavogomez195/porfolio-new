@@ -37,11 +37,11 @@ const Sobremi = () => {
  
 
   return (
-    <div   id="sobremi" className=" tracking-wider  w-full   lg:h-screen  flex flex-col md:flex-row lg:flex-row px-20 gap-20 pt-5 lg:pt-20 pb-20 transition-all duration-500  "
+    <div   id="sobremi" className=" tracking-wider  w-full   lg:h-screen  flex flex-col md:flex-row lg:flex-row md:px-10 px-20 gap-20 pt-5 lg:pt-20 pb-20 transition-all duration-500  "
    >
      
     
-      <motion.div className=" flex justify-center   w-full " 
+      <motion.div className=" flex justify-center w-full  " 
        ref={ref}
        initial="hidden"
        animate={controls}
@@ -54,7 +54,7 @@ const Sobremi = () => {
 
 
 
-   <img className="hover:scale-125 duration-200" src={perfil} alt="perfil" />
+   <img className="hover:scale-125 duration-200  " src={perfil} alt="perfil" />
 
       </motion.div>
 
@@ -70,11 +70,11 @@ const Sobremi = () => {
  }}
  transition={{ duration: 0.5 }}>
 
-    <h1 className="  text-[40px] md:text-[60px] lg:text-5xl  text-slate-50 left-1/2  top-7 font-oswald pb-10 ">Sobre mi</h1>
+    <h1 className="  text-3xl md:text-4xl lg:text-5xl  text-slate-50 left-1/2  top-7 font-oswald pb-10 ">Sobre mi</h1>
     <p className="  text-slate-50 left-1/2 right-14 top-24 font-oswald pb-10  ">Soy Gustavo de Obera Misiones Argentina, desarrollador frontend trainee con habilidades sólidas en la creación de interfaces interactivas y atractivas, estoy en constante aprendizaje </p>
-    <h5 className=" font-oswald  text-[40px] md:text-[60px] lg:text-5xl text-slate-50 left-1/2  top-40 pb-10">Skill</h5>
+    <h5 className=" font-oswald  text-3xl md:text-4xl lg:text-5xl text-slate-50 left-1/2  top-40 pb-10">Skill</h5>
     
-    <div className="flex flex-wrap gap-5  text-slate-50 text-sm font-oswald items-center ">
+    <div className="flex flex-wrap gap-5  text-slate-50  font-oswald items-center ">
 
  
     <img  src={html} alt="html" />
