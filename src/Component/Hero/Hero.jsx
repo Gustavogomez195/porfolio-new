@@ -69,12 +69,12 @@ const Hero = () => {
      <i class="bi bi-arrow-down-right text-white text-4xl absolute left-[45%] lg:left-[50%] bottom-10"></i>
      
      
-     <div className="fixed font-oswald bottom-10 left-[40px] px-0 text-[11px] lg:left-[80px] lg:text-[15px] text-slate-50 z-50 uppercase">
+     <div className="fixed font-oswald bottom-10 left-[40px] md:left-[80px] px-0 text-[11px] lg:left-[80px] lg:text-[15px] text-slate-50 z-50 uppercase">
      <p>© 2024 Gustavo Gomez</p>
      
      </div>
     
-     <p className="fixed  font-oswald bottom-10 right-[40px] text-[11px] lg:right-[75px] lg:text-[15px] text-slate-50 z-50 uppercase ">tiempo {segundos}</p>
+     <p className="fixed  font-oswald bottom-10 right-[40px] md:right[75px] text-[11px] lg:right-[75px] lg:text-[15px] text-slate-50 z-50 uppercase ">tiempo {segundos}</p>
      
 </div>
     
