@@ -37,7 +37,7 @@ const Sobremi = () => {
  
 
   return (
-    <div   id="sobremi" className=" tracking-wider  w-full   lg:h-screen  flex flex-col md:flex-row lg:flex-row md:px-10 px-20 gap-20 pt-5 lg:pt-20 pb-20 transition-all duration-500  "
+    <div   id="sobremi" className=" tracking-wider  w-full   lg:h-screen  flex flex-col md:flex-row lg:flex-row md:px-10 px-10 md:px-14 lg:px-20 gap-20 pt-5 lg:pt-20 pb-10 lg:pb-20 transition-all duration-500  "
    >
      
     
@@ -60,7 +60,7 @@ const Sobremi = () => {
 
       
     
-<motion.div className="w-full h-full  border-t border-b  border-slate-50 border-opacity-60  p-10  "
+<motion.div className="w-full h-full  border-t border-b  border-slate-50 border-opacity-60 pt-10 pb-10 p-0 lg:p-10  "
  ref={ref}
  initial="hidden"
  animate={controls}

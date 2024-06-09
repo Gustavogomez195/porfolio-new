@@ -35,7 +35,7 @@ const  App = ()=> {
     <div className="relative" >
     {showWelcome && <WelcomeScreen onComplete={handleWelcomeComplete} />}
     <div className={`transition-opacity duration-1000 ${showWelcome ? 'opacity-0' : 'opacity-100'}`}>
-      <CursorLinterna/>
+      <CursorLinterna />
       <Header/>
       
       <Hero/>

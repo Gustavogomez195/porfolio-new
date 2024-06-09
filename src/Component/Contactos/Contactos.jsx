@@ -49,7 +49,7 @@ const Contactos = () => {
   
 
   return (
-    <motion.div id='contactos' className=' mt-36 tracking-wider font-oswald w-full lg:h-screen  px-10 lg:px-20 pt-10 lg:pt-16  overflow-hidden '
+    <motion.div id='contactos' className=' mt-10 md:mt-14 lg:mt-44  tracking-wider font-oswald w-full lg:h-screen  px-10 lg:px-20 pt-10 lg:pt-16  overflow-hidden '
     ref={ref}
     initial="hidden"
     animate={controls}
@@ -60,7 +60,7 @@ const Contactos = () => {
     transition={{ duration: 0.5 }} >
       
       
-      <h5 className=' text-slate-50 font-oswald  text-3xl md:text-4xl lg:text-5xl  pt-20 px-2 '>Contactos</h5>
+      <h5 className=' text-slate-50 font-oswald  text-3xl md:text-4xl lg:text-5xl pt-20 px-2 '>Contactos</h5>
 <div className='flex flex-col lg:grid lg:grid-cols-2 pt-16'>
 
     

@@ -15,7 +15,7 @@ const CursorLinterna = () => {
   }, []);
 
   return (
-    <div className="pointer-events-none fixed inset-0">
+    <div className="pointer-events-none lg:fixed inset-0">
       <div
         className="absolute bg-transparent pointer-events-none"
         style={{
