@@ -22,6 +22,10 @@ import CursorLinterna from "./Component/Cursor/CursorLinterna"
 
 
 
+
+
+
+
 const  App = ()=> {
   const [showWelcome, setShowWelcome] = useState(true);
 
@@ -31,13 +35,20 @@ const  App = ()=> {
   
     
   return (
-    <>
-    <div className="relative" >
+    < >
+    
+    <div className="relative" 
+      style={{
+        backgroundImage: `
+          radial-gradient(circle, rgba(255, 255, 255, 0.05) 2%, transparent 2%),
+          radial-gradient(circle, rgba(255, 255, 255, 0.05) 2%, transparent 2%)`,
+        backgroundSize: '3px 3px',
+      }}>
     {showWelcome && <WelcomeScreen onComplete={handleWelcomeComplete} />}
-    <div className={`transition-opacity duration-1000 ${showWelcome ? 'opacity-0' : 'opacity-100'}`}>
+    <div className={`transition-opacity duration-1000 ${showWelcome ? 'opacity-0' : 'opacity-100'}`}
+    >
       <CursorLinterna />
       <Header/>
-      
       <Hero/>
       <Sobremi/>
       <ProjectList/>

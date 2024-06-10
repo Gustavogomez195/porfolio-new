@@ -49,7 +49,8 @@ const Sobremi = () => {
          visible: { opacity: 1, y: 0 },
          hidden: { opacity: 0, y: 200 },
        }}
-       transition={{ duration: 0.5 }} >
+       transition={{ duration: 0.5 }}
+        >
 
 
 

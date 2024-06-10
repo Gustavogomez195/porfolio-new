@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { motion, useAnimation } from "framer-motion";
 import logotipo from "../../assets/logotipo.png"
+import ParallaxEffect from "../Parallax/Parallax";
+
 
 
 
@@ -44,20 +46,11 @@ const Hero = () => {
 
   
   return (
-    <div id="inicio" className="relative overflow-hidden h-screen flex items-center   " >
+    <div id="inicio" className=" relative overflow-hidden h-screen flex items-center   " >
       
-    <motion.div  
-        initial={{ x: '0' }}
-        animate={{ x: '-50%' }}
-        transition={{ repeat: Infinity, duration: 25, ease: 'linear' }}
-        className="flex whitespace-nowrap">
-
-<p className='  text-slate-50 font-oswald tracking-wider text-6xl md:text-7xl  lg:text-9xl    '> - Gustavo Gomez - Web Developer - </p>
-<p className='text-slate-50 font-oswald tracking-wider text-6xl md:text-7xl lg:text-9xl '> Gustavo Gomez - Web Developer -
-        </p>
-     </motion.div>
+      <ParallaxEffect/>
      
-     <motion.div className="  absolute  items-center  top-[95px] right-[60px]" animate={controls}>
+     <motion.div className="  absolute  items-center  top-[95px] right-[40px] md:right-[60px] lg:right-[60px]" animate={controls}>
       <img className="w-28 h-28  animate-fade-down" src={logotipo} alt="logo" />
 
      </motion.div>
