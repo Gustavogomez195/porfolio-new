@@ -38,7 +38,7 @@ const ProjectList = () => {
   return (
     <motion.div
       id="proyectos"
-      className="pt-20 pb-10 lg:pb-48 w-full h-screen flex flex-col items-center tracking-wider"
+      className="pt-20 pb-10 lg:pb-48 w-full h-screen flex flex-col lg:flex-col items-center tracking-wider"
       ref={ref}
       initial="hidden"
       animate={controls}
