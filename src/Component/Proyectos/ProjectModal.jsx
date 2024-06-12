@@ -23,7 +23,7 @@ const ProjectModal = ({ project, onClose }) => {
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.8 }}
         transition={{ duration: 0.3 }}
-        className="bg-stone-950 border p-4 rounded-lg shadow-lg max-w-lg w-full"
+        className="backdrop-blur-sm border p-4 rounded-lg shadow-lg max-w-lg w-full"
       >
         <div className='flex justify-between'>
         <h2 className="text-2xl text-slate-50  mb-2">{project.title}</h2>
