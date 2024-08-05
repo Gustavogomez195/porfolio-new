@@ -11,7 +11,7 @@ const SmokeBackground = () => {
 
   // Carga la textura de humo
   const smokeImage = new Image();
-  smokeImage.src = "public/humo.png";
+  smokeImage.src = "src/assets/humo.png";
 
   class Particle {
     constructor(canvas) {
