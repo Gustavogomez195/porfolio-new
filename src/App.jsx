@@ -4,10 +4,16 @@ import Header from "./Component/Navbar/Header"
 import Sobremi from "./Component/Sobremi/Sobremi"
 import Contactos from "./Component/Contactos/Contactos"
 import Footer from "./Component/Footer/Footer"
-import ProjectList from "./Component/Proyectos/Proyectos"
+
 import { useState } from "react"
 import WelcomeScreen from "./Component/Carga/Carga"
 import CursorLinterna from "./Component/Cursor/CursorLinterna"
+
+import SmokeBackground from "./Component/Fondo/Fondo"
+
+import ServiciosList from "./Component/Servicios/Servicios"
+import Proyectos from "./Component/Proyectos/Proyectos"
+
 
 
 
@@ -38,12 +44,8 @@ const  App = ()=> {
     < >
     
     <div className="relative" 
-      style={{
-        backgroundImage: `
-          radial-gradient(circle, rgba(255, 255, 255, 0.05) 2%, transparent 2%),
-          radial-gradient(circle, rgba(255, 255, 255, 0.05) 2%, transparent 2%)`,
-        backgroundSize: '3px 3px',
-      }}>
+     >
+        <SmokeBackground/>
     {showWelcome && <WelcomeScreen onComplete={handleWelcomeComplete} />}
     <div className={`transition-opacity duration-1000 ${showWelcome ? 'opacity-0' : 'opacity-100'}`}
     >
@@ -51,9 +53,11 @@ const  App = ()=> {
       <Header/>
       <Hero/>
       <Sobremi/>
-      <ProjectList/>
+      <Proyectos/>
+      <ServiciosList/>
       <Contactos/>
       <Footer/>
+    
 
       
       

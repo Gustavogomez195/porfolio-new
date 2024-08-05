@@ -1,4 +1,4 @@
-import perfil from "../../assets/stickerg.png"
+import perfil from "../../assets/gustavo-perfil.png"
 
 import html from "../../assets/html.svg"
 import css from "../../assets/css.svg"
@@ -37,11 +37,11 @@ const Sobremi = () => {
  
 
   return (
-    <div   id="sobremi" className=" tracking-wider  w-full   lg:h-screen  flex flex-col md:flex-row lg:flex-row md:px-10 px-10 md:px-14 lg:px-20 gap-20 pt-5 lg:pt-20 pb-10 lg:pb-20 transition-all duration-500  "
+    <div   id="sobremi" className=" tracking-wider  w-full   lg:h-screen  flex flex-col md:flex-row lg:flex-row md:px-10 px-10 md:px-14 lg:px-10 gap-20 pt-5 lg:pt-20 pb-10 lg:pb-20 transition-all duration-500  "
    >
      
     
-      <motion.div className=" flex justify-center w-full  " 
+      <motion.div className=" flex justify-center w-full " 
        ref={ref}
        initial="hidden"
        animate={controls}
@@ -55,7 +55,11 @@ const Sobremi = () => {
 
 
 
-   <img className="hover:scale-125 duration-200  " src={perfil} alt="perfil" />
+   <img src={perfil} alt="perfil" 
+   style={{
+    maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 5) 90%, rgba(0, 0, 0, 0) 100%)',
+    WebkitMaskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 5) 90%, rgba(0, 0, 0, 0) 100%)',
+  }}/>
 
       </motion.div>
 

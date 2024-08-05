@@ -41,9 +41,9 @@ function ParallaxText({ children, baseVelocity = 100 }) {
     <div  className="  whitespace-nowrap">
       <motion.div className="flex space-x-4" style={{ x }}>
         <span className="text-8xl font-oswald text-slate-50 tracking-wider text-slate-50 font-semibold uppercase">{children}</span>
-        <span className="text-8xl font-oswald text-slate-50 tracking-wider text-slatered-50 font-semibold uppercase ">{children}</span>
-        <span className="text-8xl font-oswald text-slate-50 tracking-wider text-slatered-50 font-semibold uppercase">{children}</span>
-        <span className="text-8xl font-oswald text-slate-50 tracking-wider text-slatered-50 font-semibold  uppercase">{children}</span>
+        <span className="text-8xl font-oswald text-slate-50 tracking-wider text-slate-50 font-semibold uppercase ">{children}</span>
+        <span className="text-8xl font-oswald text-slate-50 tracking-wider text-slate-50 font-semibold uppercase">{children}</span>
+        <span className="text-8xl font-oswald text-slate-50 tracking-wider text-slate-50 font-semibold  uppercase">{children}</span>
       </motion.div>  </div>
   );
 }
