@@ -48,12 +48,12 @@ const ServiciosList = () => {
       }}
       transition={{ duration: 0.5 }}
     >
-      <h4 className="text-slate-50 font-oswald tracking-wider text-3xl md:text-4xl lg:text-5xl w-full px-10 lg:px-20 pt-10 lg:pb-20 pb-10 lg:pt-20">Servicios</h4>
+      <h4 className="text-slate-50 font-oswald tracking-wider text-3xl md:text-4xl lg:text-5xl w-full px-10 lg:px-10 pt-10 lg:pb-20 pb-10 lg:pt-20">Servicios</h4>
 
       {servicios.map((project, index) => (
         <div key={index} className="w-[87%] flex items-center  overflow-hidden border-t border-slate-50 border-opacity-40 hover:border-opacity-60 pb-24 pt-24 group">
           
-          <h2 className="  text-xl md:text-3xl lg:text-5xl text-slate-50 font-oswald pl-10 opacity-none md:opacity-80   lg:opacity-80 group-hover:opacity-100  ">
+          <h2 className="  text-xl md:text-3xl lg:text-5xl text-slate-50 font-oswald  opacity-none md:opacity-80   lg:opacity-80 group-hover:opacity-100  ">
             {project.title}
           </h2>
           

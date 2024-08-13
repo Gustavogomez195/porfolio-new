@@ -38,12 +38,12 @@ function ParallaxText({ children, baseVelocity = 100 }) {
   });
 
   return (
-    <div  className="  whitespace-nowrap">
-      <motion.div className="flex space-x-4" style={{ x }}>
-        <span className="text-8xl font-oswald text-slate-50 tracking-wider text-slate-50 font-semibold uppercase">{children}</span>
-        <span className="text-8xl font-oswald text-slate-50 tracking-wider text-slate-50 font-semibold uppercase ">{children}</span>
-        <span className="text-8xl font-oswald text-slate-50 tracking-wider text-slate-50 font-semibold uppercase">{children}</span>
-        <span className="text-8xl font-oswald text-slate-50 tracking-wider text-slate-50 font-semibold  uppercase">{children}</span>
+    <div  className="  whitespace-nowrap ">
+      <motion.div className="flex space-x-4 " style={{ x }}>
+        <span className="text-9xl font-oswald text-slate-50 tracking-tighter  font-medium uppercase">{children}</span>
+        <span className="text-9xl font-oswald text-slate-50 tracking-tighter  font-medium uppercase ">{children}</span>
+        <span className="text-9xl font-oswald text-slate-50 tracking-tighter  font-medium uppercase">{children}</span>
+        <span className="text-9xl font-oswald text-slate-50 tracking-tighter  font-medium  uppercase">{children}</span>
       </motion.div>  </div>
   );
 }

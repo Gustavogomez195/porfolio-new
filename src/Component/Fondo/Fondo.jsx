@@ -20,7 +20,7 @@ const SmokeBackground = () => {
       this.x = Math.random() * this.canvas.width - this.canvas.width;
       this.y = Math.random() * this.canvas.height - this.canvas.height / 2;
       this.size = Math.random() * 3000 + 1000;
-      this.opacity = Math.random() * 0.2;
+      this.opacity = Math.random() * 0.1;
       this.rotation = Math.random() * Math.PI * 2;
       this.rotationSpeed = Math.random() * 0.002;
     }

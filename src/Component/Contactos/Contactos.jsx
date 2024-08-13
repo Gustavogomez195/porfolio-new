@@ -49,7 +49,7 @@ const Contactos = () => {
   
 
   return (
-    <motion.div id='contactos' className=' mt-10 md:mt-14 lg:mt-44  tracking-wider font-oswald w-full lg:h-screen  px-10 lg:px-20 pt-10 lg:pt-16  overflow-hidden '
+    <motion.div id='contactos' className=' mt-10 md:mt-14 lg:mt-44  tracking-wider font-oswald w-full lg:h-screen  px-10 lg:px-10 pt-10 lg:pt-16  overflow-hidden '
     ref={ref}
     initial="hidden"
     animate={controls}
@@ -60,13 +60,13 @@ const Contactos = () => {
     transition={{ duration: 0.5 }} >
       
       
-      <h5 className=' text-slate-50 font-oswald  text-3xl md:text-4xl lg:text-5xl pt-20 px-2 '>Contactos</h5>
+      <h5 className=' text-slate-50 font-oswald  text-3xl md:text-4xl lg:text-5xl pt-20  '>Contactos</h5>
 <div className='flex flex-col lg:grid lg:grid-cols-2 pt-16'>
 
     
 
-    <div className=' text-slate-50 px-3 pb-10 pr-10 '>
-<div className='flex  items-center gap-x-2 pb-10 '>
+    <div className=' text-slate-50 px-3 pb-10 pr-10 font-thin'>
+<div className='flex  items-center gap-x-2 pb-10  '>
 
     <i className="bi bi-geo-alt text-xl"></i>
     <p>Obera, Misiones, Argentina</p>
@@ -74,7 +74,7 @@ const Contactos = () => {
     
 </div>
 
-<p >Estoy encantado de que estés interesado en ponerse en contacto conmigo. Estoy disponible y dispuesto para responder a tus preguntas, escuchar tus comentarios o discutir cualquier asunto que tengas en mente.</p>
+<p  >Estoy encantado de que estés interesado en ponerse en contacto conmigo. Estoy disponible y dispuesto para responder a tus preguntas, escuchar tus comentarios o discutir cualquier asunto que tengas en mente.</p>
 
     </div>
 

@@ -55,7 +55,8 @@ const Sobremi = () => {
 
 
 
-   <img src={perfil} alt="perfil" 
+   <img src={perfil} alt="perfil"
+   className="hover:saturate-150 hover:scale-110 transition" 
    style={{
     maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 5) 90%, rgba(0, 0, 0, 0) 100%)',
     WebkitMaskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 5) 90%, rgba(0, 0, 0, 0) 100%)',
@@ -75,9 +76,9 @@ const Sobremi = () => {
  }}
  transition={{ duration: 0.5 }}>
 
-    <h1 className="  text-3xl md:text-4xl lg:text-5xl  text-slate-50 left-1/2  top-7 font-oswald pb-10 ">Sobre mi</h1>
-    <p className="  text-slate-50 left-1/2 right-14 top-24 font-oswald pb-10  ">Soy Gustavo de Obera Misiones Argentina, desarrollador frontend trainee con habilidades sólidas en la creación de interfaces interactivas y atractivas, estoy en constante aprendizaje </p>
-    <h5 className=" font-oswald  text-3xl md:text-4xl lg:text-5xl text-slate-50 left-1/2  top-40 pb-10">Skill</h5>
+    <h1 className="  text-3xl md:text-4xl lg:text-5xl  text-slate-50 left-1/2  top-7 font-oswald font-light pb-10 ">Sobre mi</h1>
+    <p className="  text-slate-50 left-1/2 right-14 top-24 font-oswald font-thin pb-10  ">Soy Gustavo de Obera Misiones Argentina, desarrollador frontend trainee con habilidades sólidas en la creación de interfaces interactivas y atractivas, estoy en constante aprendizaje </p>
+    <h5 className=" font-oswald  text-3xl md:text-4xl lg:text-5xl text-slate-50 left-1/2 font-light top-40 pb-10">Skill</h5>
     
     <div className="flex flex-wrap gap-5  text-slate-50  font-oswald items-center ">
 
