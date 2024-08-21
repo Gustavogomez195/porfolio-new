@@ -1,64 +1,38 @@
-import React, { useRef } from "react";
-import { motion, useScroll, useSpring, useTransform, useMotionValue, useVelocity, useAnimationFrame } from "framer-motion";
-import 'tailwindcss/tailwind.css';
+import React from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import "tailwindcss/tailwind.css";
 
-
-const wrap = (min, max, value) => {
-  const range = max - min;
-  return ((value - min) % range + range) % range + min;
-};
-
-function ParallaxText({ children, baseVelocity = 100 }) {
-  const baseX = useMotionValue(0);
+function ParallaxText({ children, direction = 1, className }) {
   const { scrollY } = useScroll();
-  const scrollVelocity = useVelocity(scrollY);
-  const smoothVelocity = useSpring(scrollVelocity, {
-    damping: 50,
-    stiffness: 400
-  });
-  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
-    clamp: false
-  });
-
-  
-  const x = useTransform(baseX, (v) => `${wrap(-20, -45, v)}%`);
-
-  const directionFactor = useRef(1);
-  useAnimationFrame((t, delta) => {
-    let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
-
-    if (velocityFactor.get() < 0) {
-      directionFactor.current = -1;
-    } else if (velocityFactor.get() > 0) {
-      directionFactor.current = 1;
-    }
-
-    moveBy += directionFactor.current * moveBy * velocityFactor.get();
-    baseX.set(baseX.get() + moveBy);
-  });
+  const x = useTransform(scrollY, [0, 300], ["0%", `${direction * 100}%`]);
+  const opacity = useTransform(scrollY, [200, 300], [1, 0]);
 
   return (
-    <div  className="  whitespace-nowrap ">
-      <motion.div className="flex space-x-4 " style={{ x }}>
-        <span className="text-9xl font-oswald text-slate-50 tracking-tighter  font-medium uppercase">{children}</span>
-        <span className="text-9xl font-oswald text-slate-50 tracking-tighter  font-medium uppercase ">{children}</span>
-        <span className="text-9xl font-oswald text-slate-50 tracking-tighter  font-medium uppercase">{children}</span>
-        <span className="text-9xl font-oswald text-slate-50 tracking-tighter  font-medium  uppercase">{children}</span>
-      </motion.div>  </div>
+    <motion.div
+      style={{ x, opacity }}
+      className={`text-6xl lg:text-9xl  text-black dark:text-stone-100 tracking-light font-semibold font-poppin uppercase ${className}`}
+    >
+      {children}
+    </motion.div>
   );
 }
 
 export default function ParallaxEffect() {
   return (
-    <section className=" flex flex-col  items-center ">
-        
-      <ParallaxText  baseVelocity={-2}>- Gustavo Gomez</ParallaxText>
+    <div
+      id="inicio"
+      className="relative h-screen flex flex-col justify-center px-12 space-y-4 w-full"
+    >
+      <ParallaxText direction={-1} className="self-start">
+        Diseños{" "}
+      </ParallaxText>
+      <ParallaxText direction={1} className="lg:pl-12">
+        Creativos{" "}
+      </ParallaxText>
 
-        
-        
-      <ParallaxText baseVelocity={2}>- Web Developer</ParallaxText>
-
-        
-    </section>
+      <ParallaxText direction={-1} className=" self-start lg:self-end">
+        Web Developer
+      </ParallaxText>
+    </div>
   );
 }

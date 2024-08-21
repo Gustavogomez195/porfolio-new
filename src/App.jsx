@@ -1,76 +1,56 @@
-import "bootstrap-icons/font/bootstrap-icons.css"
-import Hero from "./Component/Hero/Hero"
-import Header from "./Component/Navbar/Header"
-import Sobremi from "./Component/Sobremi/Sobremi"
-import Contactos from "./Component/Contactos/Contactos"
-import Footer from "./Component/Footer/Footer"
+import "bootstrap-icons/font/bootstrap-icons.css";
+import Hero from "./Component/Hero/Hero";
+import Header from "./Component/Navbar/Header";
+import Sobremi from "./Component/Sobremi/Sobremi";
+import Contactos from "./Component/Contactos/Contactos";
+import { useEffect, useState } from "react";
+import WelcomeScreen from "./Component/Carga/Carga";
+import CursorLinterna from "./Component/Cursor/CursorLinterna";
+import Proyectos from "./Component/Proyectos/Proyectos";
+import Cards from "./Component/Servicios/Card";
 
-import { useState } from "react"
-import WelcomeScreen from "./Component/Carga/Carga"
-import CursorLinterna from "./Component/Cursor/CursorLinterna"
+const App = () => {
+  const [darkMode, setDarkMode] = useState(true);
 
-import SmokeBackground from "./Component/Fondo/Fondo"
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [darkMode]);
 
-import ServiciosList from "./Component/Servicios/Servicios"
-import Proyectos from "./Component/Proyectos/Proyectos"
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const  App = ()=> {
   const [showWelcome, setShowWelcome] = useState(true);
 
   const handleWelcomeComplete = () => {
     setShowWelcome(false);
   };
-  
-    
+
   return (
-    < >
-    
-    <div className="relative" 
-     >
-        <SmokeBackground/>
-    {showWelcome && <WelcomeScreen onComplete={handleWelcomeComplete} />}
-    <div className={`transition-opacity duration-1000 ${showWelcome ? 'opacity-0' : 'opacity-100'}`}
-    >
-      <CursorLinterna />
-      <Header/>
-      <Hero/>
-      <Sobremi/>
-      <Proyectos/>
-      <ServiciosList/>
-      <Contactos/>
-      <Footer/>
-    
+    <>
+      <div className="relative">
+        {showWelcome && <WelcomeScreen onComplete={handleWelcomeComplete} />}
+        <div
+          className={`transition-opacity duration-1000 ${
+            showWelcome ? "opacity-0" : "opacity-100"
+          }`}
+        >
+          <CursorLinterna darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+          <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+          <Hero darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+          <Sobremi />
+          <Proyectos />
+          <Cards />
 
-      
-      
-
-  
-  
-    </div>
-  
-    </div>
-    
+          <Contactos />
+        </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default App
-
+export default App;

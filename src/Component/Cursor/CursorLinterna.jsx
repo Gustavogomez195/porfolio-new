@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const CursorLinterna = () => {
+const CursorLinterna = ({darkMode}) => {
   const [position, setPosition] = useState({ x: -9999, y: -9999 });
 
   useEffect(() => {
@@ -17,12 +17,13 @@ const CursorLinterna = () => {
   return (
     <div className="pointer-events-none lg:fixed inset-0">
       <div
-        className="absolute bg-transparent pointer-events-none"
+        className={`absolute ${darkMode ? "bg-white" : "bg-black"} rounded-full pointer-events-none`}
         style={{
-          width: '100vw',
-          height: '100vh',
-          background: `radial-gradient(circle at ${position.x}px ${position.y}px, rgba(240, 240, 240, 0.1), rgba(0, 0, 0, 0) 110px)`,
-          zIndex: -1
+          width: '18px',
+          height: '18px',
+          top: position.y - 10,
+          left: position.x - 10,
+          zIndex: 99999, 
         }}
       />
     </div>

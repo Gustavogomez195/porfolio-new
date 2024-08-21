@@ -49,7 +49,7 @@ const Contactos = () => {
   
 
   return (
-    <motion.div id='contactos' className=' mt-10 md:mt-14 lg:mt-44  tracking-wider font-oswald w-full lg:h-screen  px-10 lg:px-10 pt-10 lg:pt-16  overflow-hidden '
+    <motion.div id='contactos' className=' mt-10 pb-30  tracking-wider  w-full   px-10 lg:px-10 pt-10   overflow-hidden '
     ref={ref}
     initial="hidden"
     animate={controls}
@@ -60,12 +60,12 @@ const Contactos = () => {
     transition={{ duration: 0.5 }} >
       
       
-      <h5 className=' text-slate-50 font-oswald  text-3xl md:text-4xl lg:text-5xl pt-20  '>Contactos</h5>
+      <h5 className=' text-black  dark:text-stone-100 font-poppin font-medium text-4xl md:text-4xl lg:text-8xl pt-20  '>Contactos</h5>
 <div className='flex flex-col lg:grid lg:grid-cols-2 pt-16'>
 
     
 
-    <div className=' text-slate-50 px-3 pb-10 pr-10 font-thin'>
+    <div className=' text-black  dark:text-stone-100 px-3 pb-10 pr-10 font-medium font-poppin'>
 <div className='flex  items-center gap-x-2 pb-10  '>
 
     <i className="bi bi-geo-alt text-xl"></i>
@@ -78,29 +78,29 @@ const Contactos = () => {
 
     </div>
 
-    <div className='relative w-full  mb-20 font-oswald rounded border  border-slate-50 border-opacity-50 p-5  '>
-    {notification && <div className='absolute  bottom-0 right-0 mb-4 mr-4 bg-stone-950 text-slate-50 py-2 px-4 border rounded-lg shadow'>{notification}</div>}
+    <div className='relative w-full  mb-20 font-poppin font-medium rounded border  border-black dark:border-stone-100 border-opacity-50 p-5  '>
+    {notification && <div className='absolute  bottom-0 right-0 mb-4 mr-4 bg-green-900 text-stone-100 py-2 px-4 border rounded-lg shadow'>{notification}</div>}
 
     <form ref={form} onSubmit={sendEmail}>
 
-        <div className=' font-oswald text-slate-50 tracking-wider flex flex-col mb-5' >
+        <div className=' font-poppin font-medium text-black  dark:text-stone-100 tracking-wider flex flex-col mb-5' >
 
          <label>Nombre</label>
-          <input className='border border-slate-50 border-opacity-50 rounded bg-transparent focus:outline-none'  autoComplete='off' type="text" name="user_name" required />
+          <input className='border border-black dark:border-stone-100 border-opacity-50 rounded bg-transparent focus:outline-none'  autoComplete='off' type="text" name="user_name" required />
         </div>
 
-        <div className='font-oswald text-slate-50 tracking-wider  flex flex-col mb-5'>
+        <div className='font-poppin font-medium text-black  dark:text-stone-100 tracking-wider  flex flex-col mb-5'>
 
       <label>Email</label>
-      <input className='font-oswald text-slate-50 tracking-wider border border-slate-50 border-opacity-50  rounded bg-transparent focus:outline-none' autoComplete='off' type="email" name="user_email" required />
+      <input className='border border-black dark:border-stone-100 border-opacity-50 rounded bg-transparent focus:outline-none' autoComplete='off' type="email" name="user_email" required />
         </div>
 
-        <div className='font-oswald text-slate-50 tracking-wider flex flex-col mb-5 '>
+        <div className='font-poppin font-medium text-black  dark:text-stone-100 tracking-wider flex flex-col mb-5 '>
 
       <label>Mensaje</label>
-      <textarea className='border border-slate-50 border-opacity-50 rounded bg-transparent focus:outline-none'  name="message"/>
+      <textarea className='border border-black dark:border-stone-100 border-opacity-50 rounded bg-transparent focus:outline-none'  name="message"/>
         </div>
-      <input className='font-oswald text-slate-50 tracking-wider text-xl border border-orange-50 border-opacity-50 rounded p-2 cursor-pointer' type="submit" value="Enviar"  />
+      <input className='font-poppin font-medium text-black    dark:text-stone-100  tracking-wider text-xl border border-black dark:border-stone-100 border-opacity-50 rounded-full px-3 cursor-pointer' type="submit" value="Enviar"  />
     </form>
     </div>
 

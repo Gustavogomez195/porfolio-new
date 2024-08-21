@@ -1,59 +1,182 @@
-import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
-import Ecommerce from "../../assets/ecommerce.png";
-import Sinfoto from "../../assets/sinfoto.jpg";
+import { useEffect, useState, useRef } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import Ecommerce from "../../assets/ecommerce.mp4";
+import Fuego from "../../assets/fuego.jpg";
+import Fuegos from "../../assets/fuegos.jpg";
+import Farol from "../../assets/farol.jpg";
+
+const proyectos = [
+  {
+    id: 1,
+    video: Ecommerce,
+    title: "Ecommerce",
+    description:
+      "Como proyecto final de un curso, desarrollé un ecommerce en colaboración con dos compañeros. Utilizamos tecnologías como React.js, Tailwind CSS, Node.js, Express, y MongoDB para llevarlo a cabo",
+    background: Fuego,
+  },
+  {
+    id: 2,
+    video: Ecommerce,
+    title: "Proyecto 2",
+    description: "Descripción del proyecto 2",
+    background: Farol,
+  },
+  {
+    id: 3,
+    video: Ecommerce,
+    title: "Proyecto 3",
+    description: "Descripción del proyecto 3",
+    background: Fuegos,
+  },
+];
 
 const Proyectos = () => {
-  const cards = [
-    { id: 1, title: 'Ecommerce', image: Ecommerce, git: "https://github.com/LautaroJLZ/BackEndReact", link: "https://back-end-react-final-project.vercel.app/", description: "Desarrollé un ecommerce dedicado a la venta de muebles como proyecto final de cursada en colaboración con un equipo, utilizando el stack MERN, MongoDb, Express.js, React.js y Node.js." },
-    { id: 2, title: 'Proyecto 2', image: Sinfoto, description: "Descripción del Proyecto 2." },
-    { id: 3, title: 'Proyecto 3', image: Sinfoto, description: "Descripción del Proyecto 3." },
-    
-  ];
+  const [currentProject, setCurrentProject] = useState(1);
+  const sectionRefs = useRef([]);
+  const videoRefs = useRef([]);
 
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", `-${(cards.length - 1) * 100}vw`]);
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
+    }
+  }, [controls, inView]);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = sectionRefs.current.indexOf(entry.target);
+          const videoElement = videoRefs.current[index];
 
-  
+          if (entry.isIntersecting) {
+            setCurrentProject(proyectos[index]?.id);
+            if (videoElement) videoElement.play();
+          } else {
+            if (videoElement) videoElement.pause();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    sectionRefs.current.forEach((ref) => ref && observer.observe(ref));
+    return () =>
+      sectionRefs.current.forEach((ref) => ref && observer.unobserve(ref));
+  }, []);
+
+  const flipVariants = {
+    initial: { rotateX: 90, opacity: 0 },
+    animate: { rotateX: 0, opacity: 1 },
+    exit: { rotateX: -90, opacity: 0 },
+  };
 
   return (
-    <section ref={targetRef} className="relative h-[600vh] w-full"
-    id="proyectos">
-      <h4 className="text-slate-50 font-oswald font-light tracking-wider text-3xl md:text-4xl lg:text-5xl  px-10 "
-      >Proyectos</h4>
-      <div className="sticky top-0 h-screen flex items-center overflow-hidden">
-        
-        <motion.div style={{ x }} className="flex flex-row">
-          {cards.map((card) => (
-            <Card card={card} key={card.id} />
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
-};
-
-const Card = ({ card }) => {
-  return (
-    <div className="h-full w-screen px-10">
-      
-      <div className="flex flex-row w-full h-full">
-        <div className="w-1/2 flex  text-slate-50 font-oswald  ">
-          <div className=" justify-center  h-full">
-            <h2 className="text-4xl mb-4 font-light">{card.title}</h2>
-            <p className="font-thin" >{card.description}</p>
+    <motion.section
+      id="proyectos"
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={{
+        visible: { opacity: 1, y: 0 },
+        hidden: { opacity: 0, y: 100 },
+      }}
+      transition={{ duration: 0.5 }}
+    >
+      <h4 className="text-4xl lg:text-8xl text-black dark:text-stone-100 font-poppin font-medium mx-10 uppercase pb-20">
+        Proyectos seleccionados
+      </h4>
+      <div className="relative w-full flex flex-col lg:flex-row px-10">
+        <div className="relative lg:sticky  top-0 w-full h-1/2 lg:h-screen z-10 font-poppin font-medium text-black dark:text-stone-100 pr-10 pb-20 lg:pb-0">
+          <p className="text-lg">
+            Proyectos seleccionados que realicé para demostrar mis
+            conocimientos. Cada uno refleja mi habilidad para aplicar conceptos
+            técnicos y creativos en el desarrollo de soluciones efectivas y
+            estéticamente atractivas.
+          </p>
+          <div className="text-[250px] hidden lg:flex ">
+            <span>0</span>
+            <motion.span
+              className="inline-block w-2"
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              variants={flipVariants}
+              transition={{ duration: 0.8 }}
+              key={currentProject}
+            >
+              {currentProject}
+            </motion.span>
           </div>
         </div>
-        <div className="w-1/2 flex justify-center rounded-xl ">
-          <img src={card.image} alt={card.title} className="w-[100vh] h-[80vh] contrast-100 saturate-50 hover:filter-none object-cover rounded-xl " />
+
+        <div className="w-full flex flex-col justify-center items-center gap-5">
+          {proyectos.map((proyecto, index) => (
+            <div
+              key={proyecto.id}
+              ref={(el) => (sectionRefs.current[index] = el)}
+              className="w-full h-1/2 lg:h-screen flex justify-center items-center relative"
+            >
+              <div
+                className="absolute inset-0 rounded-xl"
+                style={{
+                  backgroundImage: `url(${proyecto.background})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  filter: "brightness(70%)",
+                  zIndex: 0,
+                }}
+              ></div>
+
+              <div className="relative z-10 p-8">
+                <h2 className="text-5xl font-medium text-stone-100 pb-8">
+                  {proyecto.title}
+                </h2>
+                <video
+                  ref={(el) => (videoRefs.current[index] = el)}
+                  className="w-90 rounded-xl"
+                  src={proyecto.video}
+                  muted
+                  loop
+                  style={{ zIndex: 1 }}
+                >
+                  Tu navegador no soporta el elemento de video.
+                </video>
+                <p className="mt-4 font-poppin font-medium text-stone-100 backdrop-blur-sm">
+                  {proyecto.description}
+                </p>
+                <div className="font-poppin font-medium  text-md flex pt-10 gap-x-3">
+                  <a
+                    href="https://back-end-react-final-project.vercel.app/"
+                    target="_blank"
+                  >
+                    <button className="rounded-full border border-2 pr-2 text-stone-100 hover:text-stone-300">
+                      <i className="bi bi-link-45deg px-1"></i>Deploy
+                    </button>
+                  </a>
+                  <a
+                    href="https://github.com/LautaroJLZ/BackEndReact"
+                    target="_blank"
+                  >
+                    <button className="rounded-full border border-2 pr-2 text-stone-100 hover:text-stone-300">
+                      <i className="bi bi-github px-1"></i>GitHub
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </motion.section>
   );
 };
 

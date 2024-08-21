@@ -11,14 +11,15 @@ export default {
       'stali': [ 'Stalinist One', "sans-serif"],
       'volta': [ 'Voltaire', "sans-serif"],
       'oswald': [ 'Oswald', "sans-serif", 'Voltaire', "sans-serif"],
-      'dot':["DotGothic16", "sans-serif"],
-      'zen':["Zen Dots", "sans-serif"]
+      'poppin': [ 'Poppins', 'sans-serif ']
+      
     },
     
     extend: {
       
     },
   },
-  plugins: [require('tailwindcss-animated')],
+  plugins: 
+  [require('daisyui')]
 }
 
