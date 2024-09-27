@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Ecommerce from "../../assets/ecommerce.mp4";
+import Cart from "../../assets/cart.mp4";
 import Fuego from "../../assets/fuego.jpg";
 import Fuegos from "../../assets/fuegos.jpg";
 import Farol from "../../assets/farol.jpg";
@@ -14,13 +15,17 @@ const proyectos = [
     description:
       "Como proyecto final de un curso, desarrollé un ecommerce en colaboración con dos compañeros. Utilizamos tecnologías como React.js, Tailwind CSS, Node.js, Express, y MongoDB para llevarlo a cabo",
     background: Fuego,
+    link: "https://back-end-react-final-project.vercel.app/",
+    github: "https://github.com/LautaroJLZ/BackEndReact"
   },
   {
     id: 2,
-    video: Ecommerce,
-    title: "Proyecto 2",
-    description: "Descripción del proyecto 2",
+    video: Cart,
+    title: "Carrito de compras",
+    description: "Lista de Productos con Carrito, Agrega y elimina artículos del carrito, aumentar/disminuir la cantidad de artículos en el carrito, ver un modal de confirmación de pedido cuando hagan clic en Confirmar Pedido, restablece sus selecciones cuando hagan clic en Iniciar Nuevo Pedido",
     background: Farol,
+    link: "https://carrito-orcin.vercel.app/",
+    github: "https://github.com/Gustavogomez195/Carrito"
   },
   {
     id: 3,
@@ -155,7 +160,7 @@ const Proyectos = () => {
                 </p>
                 <div className="font-poppin font-medium  text-md flex pt-10 gap-x-3">
                   <a
-                    href="https://back-end-react-final-project.vercel.app/"
+                    href={proyecto.link}
                     target="_blank"
                   >
                     <button className="rounded-full border border-2 pr-2 text-stone-100 hover:text-stone-300">
@@ -163,7 +168,7 @@ const Proyectos = () => {
                     </button>
                   </a>
                   <a
-                    href="https://github.com/LautaroJLZ/BackEndReact"
+                    href={proyecto.github}
                     target="_blank"
                   >
                     <button className="rounded-full border border-2 pr-2 text-stone-100 hover:text-stone-300">

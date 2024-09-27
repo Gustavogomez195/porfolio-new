@@ -12,11 +12,7 @@ const projects = [
     description: "Ofrezco servicios de diseño con un enfoque innovador y soluciones visuales que capturan la esencia de tu marca. Desde diseños gráficos impactantes hasta interfaces de usuario elegantes y funcionales, mi objetivo es crear experiencias visuales que no solo impresionen, sino que también se alineen perfectamente con tus necesidades y objetivos.",
     star: "bi bi-stars",
   },
-  {
-    title: "Seo",
-    description: " Ofrezco servicios de SEO para la optimización técnica de tu sitio web hasta la creación de contenido relevante y estrategias de enlaces, mi objetivo es mejorar la visibilidad de tu marca en los motores de búsqueda",
-    star: "bi bi-stars",
-  },
+  
 ];
 
 const Tarjetas = ({ title, description, star }) => {

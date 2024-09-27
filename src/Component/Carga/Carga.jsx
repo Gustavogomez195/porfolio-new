@@ -32,7 +32,7 @@ const WelcomeScreen = ({ onComplete }) => {
           transition={{ duration: 0.5 }}
           onAnimationComplete={onComplete}
         >
-          <h1 className="text-5xl font-medium font-poppin text-black  ">Bienvenido</h1>
+          <h1 className="text-4xl font-medium font-poppin text-black  ">Bienvenido</h1>
         </motion.div>
       )}
     </AnimatePresence>
