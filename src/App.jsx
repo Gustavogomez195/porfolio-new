@@ -4,7 +4,6 @@ import Header from "./Component/Navbar/Header";
 import Sobremi from "./Component/Sobremi/Sobremi";
 import Contactos from "./Component/Contactos/Contactos";
 import { useEffect, useState } from "react";
-import WelcomeScreen from "./Component/Carga/Carga";
 import CursorLinterna from "./Component/Cursor/CursorLinterna";
 import Proyectos from "./Component/Proyectos/Proyectos";
 import Cards from "./Component/Servicios/Card";
@@ -33,12 +32,9 @@ const App = () => {
   return (
     <>
       <div className="relative">
-        {showWelcome && <WelcomeScreen onComplete={handleWelcomeComplete} />}
-        <div
-          className={`transition-opacity duration-1000 ${
-            showWelcome ? "opacity-0" : "opacity-100"
-          }`}
-        >
+        
+        
+         
           <CursorLinterna darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
           <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
           <Hero darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
@@ -48,7 +44,7 @@ const App = () => {
 
           <Contactos />
         </div>
-      </div>
+      
     </>
   );
 };
