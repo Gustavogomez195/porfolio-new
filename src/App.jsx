@@ -4,7 +4,6 @@ import Header from "./Component/Navbar/Header";
 import Sobremi from "./Component/Sobremi/Sobremi";
 import Contactos from "./Component/Contactos/Contactos";
 import { useEffect, useState } from "react";
-import CursorLinterna from "./Component/Cursor/CursorLinterna";
 import Proyectos from "./Component/Proyectos/Proyectos";
 import Cards from "./Component/Servicios/Card";
 
@@ -23,11 +22,7 @@ const App = () => {
     setDarkMode(!darkMode);
   };
 
-  const [showWelcome, setShowWelcome] = useState(true);
-
-  const handleWelcomeComplete = () => {
-    setShowWelcome(false);
-  };
+ 
 
   return (
     <>
@@ -35,7 +30,7 @@ const App = () => {
         
         
          
-          <CursorLinterna darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+         
           <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
           <Hero darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
           <Sobremi />

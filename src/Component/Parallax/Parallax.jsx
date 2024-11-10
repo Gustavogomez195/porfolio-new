@@ -1,6 +1,6 @@
 import React from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import "tailwindcss/tailwind.css";
+
 
 function ParallaxText({ children, direction = 1, className }) {
   const { scrollY } = useScroll();

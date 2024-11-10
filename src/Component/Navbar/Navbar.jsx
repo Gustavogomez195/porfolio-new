@@ -28,7 +28,7 @@ const Navbar = ({darkMode, toggleDarkMode}) => {
             : "absolute top-20 mx-auto left-10 right-10 w-4/5 text-center transition-all duration-500 opacity-0"
         } lg:opacity-100 lg:bg-transparent lg:top-0 lg:mx-0 lg:left-0 lg:right-0 lg:w-full lg:p-0 lg:relative lg:border-none lg:flex font-poppin font-thin  gap-5`}
       >
-        <li className="pb-2 lg:pb-0  cursor-pointer relative group">
+        <li className="pb-2 pt-2 lg:pb-0  cursor-pointer relative group">
           <a
             href="#inicio"
             className="block overflow-hidden relative h-6 text-black   dark:text-stone-100 font-poppin font-semibold"
@@ -42,7 +42,7 @@ const Navbar = ({darkMode, toggleDarkMode}) => {
           </a>
         </li>
 
-        <li className="pb-2 lg:pb-0  cursor-pointer relative group">
+        <li className="pb-2 pt-2 lg:pb-0  cursor-pointer relative group">
           <a
             href="#sobremi"
             className="block overflow-hidden relative h-6 text-black   dark:text-stone-100 font-poppin font-semibold"
@@ -56,7 +56,7 @@ const Navbar = ({darkMode, toggleDarkMode}) => {
           </a>
         </li>
 
-        <li className="pb-2 lg:pb-0  cursor-pointer relative group">
+        <li className="pb-2 pt-2 lg:pb-0  cursor-pointer relative group">
           <a
             href="#proyectos"
             className="block overflow-hidden relative h-6 text-black  dark:text-stone-100 font-poppin font-semibold"
@@ -70,7 +70,7 @@ const Navbar = ({darkMode, toggleDarkMode}) => {
           </a>
         </li>
 
-        <li className="pb-2 lg:pb-0  cursor-pointer relative group">
+        <li className="pb-2 pt-2 lg:pb-0  cursor-pointer relative group">
           <a
             href="#contactos"
             className="block overflow-hidden relative h-6 text-black dark:text-stone-100 font-poppin font-semibold"
@@ -84,23 +84,23 @@ const Navbar = ({darkMode, toggleDarkMode}) => {
           </a>
         </li>
         <li>
-        <label className="swap swap-rotate">
-  {/* this hidden checkbox controls the state */}
+        <label className="swap swap-rotate pb-2 pt-2 ">
+
   <input type="checkbox"  onClick={toggleDarkMode} />
   
 
-  {/* sun icon */}
+  
   <svg
-    className="swap-on h-7 w-7 fill-black dark:fill-stone-100 "
+    className="swap-on h-5 w-5 fill-black dark:fill-stone-100 "
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24">
     <path
       d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
   </svg>
 
-  {/* moon icon */}
+  
   <svg
-    className="swap-off h-7 w-7 fill-black dark:fill-stone-100"
+    className="swap-off h-5 w-5 fill-black dark:fill-stone-100"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24">
     <path

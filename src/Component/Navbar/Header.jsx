@@ -26,7 +26,7 @@ const Header = ({darkMode, toggleDarkMode }) => {
     <header
       className={`${
         scrolling
-          ? "pb-1 pt-1 backdrop-blur-sm z-50 border-b border-black dark:border-stone-100 border-opacity-60"
+          ? "pb-1 pt-1 backdrop-blur-lg z-50 border-b border-black dark:border-stone-100 border-opacity-60 "
           : "pb-5 pt-5"
       } z-50 fixed w-full px-10 md:px-14 lg:px-10 flex justify-between justify-center items-center transition-all duration-300 animate-fade-down`}
     >

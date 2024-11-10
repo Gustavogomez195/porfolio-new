@@ -3,6 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Ecommerce from "../../assets/ecommerce.mp4";
 import Cart from "../../assets/cart.mp4";
+import Calculadora from "../../assets/calculadora.mp4"
 import Fuego from "../../assets/fuego.jpg";
 import Fuegos from "../../assets/fuegos.jpg";
 import Farol from "../../assets/farol.jpg";
@@ -29,10 +30,12 @@ const proyectos = [
   },
   {
     id: 3,
-    video: Ecommerce,
-    title: "Proyecto 3",
-    description: "Descripción del proyecto 3",
+    video: Calculadora,
+    title: "Calculadora fitness",
+    description: "Calculadora Fitness, los usuario pueden calcular sus calorías, seleccionar un objetivo, mantener, aumentar o bajar de peso, guardar los resultados y eliminar los resultados guardados ",
     background: Fuegos,
+    link: "https://calculadora-fit-five.vercel.app/",
+    github: "https://github.com/Gustavogomez195/calculadora-fit"
   },
 ];
 
@@ -131,12 +134,12 @@ const Proyectos = () => {
               className="w-full h-1/2 lg:h-screen flex justify-center items-center relative"
             >
               <div
-                className="absolute inset-0 rounded-xl"
+                className="absolute inset-0 rounded-xl "
                 style={{
                   backgroundImage: `url(${proyecto.background})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
-                  filter: "brightness(70%)",
+                  filter: "brightness(70%) ",
                   zIndex: 0,
                 }}
               ></div>
